@@ -1,11 +1,11 @@
 import react from 'react';
 
-const About = () => {
+const Portfolio = () => {
     return (
         <div>
-            About 
+            Portfolio
         </div>
     );
 }
 
-export default About
+export default Portfolio
