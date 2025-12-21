@@ -1,0 +1,30 @@
+.container {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--accent-color);
+}   
+
+.links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.logout{
+    padding: 5px;
+    border: none;
+    background-color: var(--accent-color);
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+    font-family: var(--font-inter), sans-serif;
+}
