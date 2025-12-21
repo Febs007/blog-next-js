@@ -1,6 +1,7 @@
 import react from 'react';
 import styles from './about.module.css';
 import Image from 'next/image';
+import Button from '../../components/button/button';
 
 
 const About = () => {
@@ -45,6 +46,11 @@ const About = () => {
             into interactive, user-friendly web interfaces that help people make better decisions.
           </p>
         </div>
+
+      <Button text="Download My Resume" url="/resume.pdf" type="primaryButton"/>
+
+
+    
       </div> 
     </div>  
     );
