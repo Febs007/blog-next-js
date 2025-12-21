@@ -3,14 +3,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 20px;
 
 }
 
 .logo {
     font-size: 24px;
     font-weight: bold;
-    color: var(--accent-color);
+    background : linear-gradient(to bottom, #a3a3a3, #059669 );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: transform 0.3s ease;
 }   
+
+.logo:hover {
+    transform: scale(1.05);
+}
 
 .links {
     display: flex;
@@ -19,12 +27,82 @@
 
 }
 
-.logout{
-    padding: 5px;
-    border: none;
-    background-color: var(--accent-color);
+.link {
+    text-decoration: none;
     color: white;
-    cursor: pointer;
-    border-radius: 3px;
     font-family: var(--font-inter), sans-serif;
+    font-size: 16px;
+    position: relative;
+    transition: color 0.3s ease;
 }
+
+.link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 50%;
+    background-color: #059669;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.link:hover::after, .link.active::after {
+    width: 100%;
+}
+
+.link:hover, .link.active {
+    color: white; 
+}
+
+
+.signin, .logout {
+  padding: 8px 20px;
+  cursor: pointer;
+  border-radius: 6px; 
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: transparent;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1); 
+  align-items: center;
+  justify-content: center;
+}
+
+
+.signin {
+  border: 2px solid #059669;
+  color: #059669;
+  -webkit-mask-image: linear-gradient(to bottom, black 85%, rgba(0,0,0,0.5) 100%);
+  mask-image: linear-gradient(to bottom, black 85%, rgba(0,0,0,0.5) 100%);
+}
+
+.signin:hover {
+  background-color: #059669;
+  color: white;
+  -webkit-mask-image: none;
+  mask-image: none;
+  transform: translateY(-2px); 
+  box-shadow: 0 8px 20px rgba(5, 150, 105, 0.3);
+}
+
+.logout {
+  border: 1px solid #a3a3a3;
+  color: #a3a3a3;
+  -webkit-mask-image: linear-gradient(to bottom, black 75%, rgba(0,0,0,0.3) 100%);
+  mask-image: linear-gradient(to bottom, black 75%, rgba(0,0,0,0.3) 100%);
+}
+
+.logout:hover {
+  border-color: #059669;
+  color: #059669;
+  background-color: rgba(5, 150, 105, 0.08); 
+  -webkit-mask-image: none;
+  mask-image: none;
+  transform: translateY(-1px);
+}
+
+.signin:active, .logout:active {
+  transform: translateY(0);
+}   

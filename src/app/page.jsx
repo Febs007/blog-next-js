@@ -1,37 +1,66 @@
+"use client"
 import Image from "next/image";
 import styles from "./page.module.css";
-import Hero from "../../public/man-white.png";
+import Hero from "../../public/hero-new.png";
+import { use } from "react";
+import Link from "next/link";
+import { motion } from "framer-motion"
+import Snowfall from "react-snowfall";
+
+
+// Definisi varian animasi
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, // Efek muncul berurutan
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
 
 export default function Home() {
   return (
     <div className={styles.container}>
-      <div className={styles.textSection}>
-        <h1 className={styles.title}>
-          Building Smarter Webs with <br /> 
-          <span className={styles.highlight}>Data-Driven Insights</span>
-        </h1>
-        
-        <p className={styles.description}>
-          Exploring the intersection of <strong>Web Development</strong> and <strong>Data Science</strong>.
-        </p>
-        
+      <Snowfall
+       color="#059669"
+          snowflakeCount={150}
+          radius={[0.5, 2.0]} // Membuat partikel kecil seperti titik data
+          speed={[0.5, 2.0]}  // Gerakan lebih tenang
+          style={{
+            position: 'fixed', // Agar mengikuti scroll
+            width: '100vw',
+            height: '100vh',
+            zIndex: 0, 
+          }}
+        />
+      <div className={styles.item}>
+        <h1 className ={styles.title}>Building Smarter Webs with <br /> 
+          <span className={styles.highlight}>Data-Driven Insights</span></h1>
+          <motion.p className={styles.description} variants={itemVariants}>
+            Exploring the intersection of <strong>Web Development</strong> and <strong>Data Science</strong>.
+          </motion.p>
+
         <div className={styles.buttonGroup}>
-          <button className={styles.primaryBtn}>Explore My Projects</button>
-          <button className={styles.secondaryBtn}>Hire Me</button>
+          <Link href="/contact" className={styles.primaryButton}>
+            Hire Me
+          </Link>
+          <Link href="/portfolio" className={styles.secondaryButton}>
+            Explore My Projects
+          </Link>
         </div>
       </div>
 
-      <div className={styles.imageSection}>
-        <div className={styles.heroWrapper}>
-          <Image 
-            src={Hero} 
-            alt="Data Visualization and Web Development Illustration"
-            priority // Bagus untuk LCP/performance gambar utama
-            layout="responsive"
-          />
-        </div>
+      <div className={styles.item}>
+        <Image src={Hero} alt="Hero Image" className={styles.hero} priority={true}/>
       </div>
     </div>
+
   );
 }
 
