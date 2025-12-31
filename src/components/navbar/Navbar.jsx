@@ -58,7 +58,7 @@ const Navbar = () => {
       onMouseEnter={showNavbar}
     >
       <Link href="/" className={styles.logo}>
-        CodeFebs
+        Aji Setiawan
       </Link>
 
       <div className={styles.links}>

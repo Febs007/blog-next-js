@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import styles from "./page.module.css";
-import Hero from "../../public/hero-new.png";
+import Hero from "../../public/aji-profile.png";
 import { use } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion"
@@ -40,10 +40,10 @@ export default function Home() {
           }}
         />
       <div className={styles.item}>
-        <h1 className ={styles.title}>Building Smarter Webs with <br /> 
-          <span className={styles.highlight}>Data-Driven Insights</span></h1>
+        <h1 className ={styles.title}>Building Secure Digital Experiences <br /> 
+          <span className={styles.highlight}></span></h1>
           <motion.p className={styles.description} variants={itemVariants}>
-            Exploring the intersection of <strong>Web Development</strong> and <strong>Data Science</strong>.
+           Exploring the intersection of <strong>Cybersecurity  </strong> and <strong>Server Infrastructure</strong>
           </motion.p>
 
         <div className={styles.buttonGroup}>
